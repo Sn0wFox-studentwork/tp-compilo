@@ -2,7 +2,7 @@
 #define TP_COMPILO_AUTOMATE_H
 
 #include "Symbole.h"
-#include "Etat.h"
+#include "states/Etat.h"
 #include "lexer.h"
 #include <stack>
 #include <string>

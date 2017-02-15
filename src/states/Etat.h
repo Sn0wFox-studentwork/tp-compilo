@@ -1,7 +1,7 @@
 #ifndef TP_COMPILO_Etat_H
 #define TP_COMPILO_Etat_H
-#include "Symbole.h"
-#include "Automate.h"
+#include "../Symbole.h"
+#include "../Automate.h"
 #include <string>
 
 class Automate;
