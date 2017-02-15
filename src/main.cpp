@@ -1,6 +1,7 @@
 #include <iostream>
 #include "lexer.h"
 #include "token.enum.h"
+#include "ReadSymbol.h"
 
 using namespace std;
 
@@ -9,11 +10,12 @@ int main() {
     getline(cin, s);
 
     Lexer lexer(s);
-    Symbole symbol = lexer.readSymbol();
+    ReadSymbol symbol = lexer.readSymbol();
 
     while(symbol != EOL) {
+
         // Treat symbol
-        cout << "Symbol read: " << symbol << endl;
+        cout << "Symbol read: " << symbol.getCharacter() << endl;
         symbol = lexer.readSymbol();
     }
 

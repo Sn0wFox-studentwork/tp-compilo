@@ -3,7 +3,7 @@
 
 #include <stack>
 #include <string>
-#include "Symbole.h"
+#include "ReadSymbol.h"
 
 class Lexer {
 public:
@@ -12,10 +12,10 @@ public:
     ~Lexer();
 
     // Analyse a string
-    Symbole readSymbol();
+    ReadSymbol readSymbol();
 
 protected:
-    std::stack<Symbole> stack;
+    std::stack<ReadSymbol> stack;
     std::string toRead;
     int cursor;
 };

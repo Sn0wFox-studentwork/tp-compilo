@@ -8,43 +8,43 @@
 
 using namespace std;
 
-Symbole Lexer::readSymbol() {
+ReadSymbol Lexer::readSymbol() {
     // Analyse string
     if(this->cursor == this->toRead.size()) {
         // That's the end of the file
-        return Symbole(EOL);
+        return ReadSymbol(EOL, "eol");
     }
     char c = this->toRead.at(this->cursor);
-    Symbole* symbol;
+    ReadSymbol* symbol;
     switch (c) {
         case '\0':
-            symbol = new Symbole(EOL);
+            symbol = new ReadSymbol(EOL, "eol");
             break;
         case '\n':
         case '\t':
         case ' ':
-            symbol = new Symbole(EMPTY);
+            symbol = new ReadSymbol(EMPTY, "empty");
             break;
         case '+':
-            symbol = new Symbole(PLUS);
+            symbol = new ReadSymbol(PLUS, "+");
             break;
         case '-':
-            symbol = new Symbole(MINUS);
+            symbol = new ReadSymbol(MINUS, "-");
             break;
         case '(':
-            symbol = new Symbole(OPEN);
+            symbol = new ReadSymbol(OPEN, "(");
             break;
         case ')':
-            symbol = new Symbole(CLOSE);
+            symbol = new ReadSymbol(CLOSE, ")");
             break;
         default:
             // That's a digit
             // TODO
-            symbol = new Symbole(EMPTY);
+            symbol = new ReadSymbol(EMPTY, "empty");
             break;
     }
 
-    Symbole sym(*symbol);
+    ReadSymbol sym(*symbol);
     delete symbol;
     this->stack.push(sym);
     this->cursor++;
