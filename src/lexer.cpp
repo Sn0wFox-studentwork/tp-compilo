@@ -1,6 +1,10 @@
 #include <iostream>
 #include <string>
 #include "lexer.h"
+#include "Symbole.h"
+#include "token.enum.h"
+
+using namespace std;
 
 Symbole Lexer::readSymbole() {
     string s;
@@ -11,7 +15,11 @@ Symbole Lexer::readSymbole() {
         cin >> s;
     }
 
-    Symbole symbol;
-    this->stack.push_back(symbol);
+    Symbole symbol(PLUS);
+    this->stack.push(symbol);
     return symbol;
+}
+
+Lexer::Lexer(): stack() {
+    // Nothing else to do
 }

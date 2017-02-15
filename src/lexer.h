@@ -1,7 +1,7 @@
 #ifndef TP_COMPILO_LEXER_H
 #define TP_COMPILO_LEXER_H
 
-#include <std:stack>
+#include <stack>
 #include "Symbole.h"
 
 class Lexer {
