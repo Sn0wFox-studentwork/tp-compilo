@@ -12,7 +12,8 @@ public:
     ~Lexer();
 
     // Analyse a string
-    ReadSymbol readSymbol();
+    // If moveHead is set to true, consumes the current character
+    ReadSymbol readSymbol(bool moveHead = true);
 
 protected:
     std::stack<ReadSymbol> stack;

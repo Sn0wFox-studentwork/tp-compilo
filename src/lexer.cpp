@@ -10,7 +10,8 @@
 using namespace std;
 
 // TODO: refactor using class Number, Expr... extending Symbole
-ReadSymbol Lexer::readSymbol() {
+// TODO: refactor 'cause it's pretty ugly
+ReadSymbol Lexer::readSymbol(bool moveHead) {
     // Handle the end of the string
     if(this->cursor == this->toRead.size()) {
         // That's the end of the file
@@ -61,7 +62,9 @@ ReadSymbol Lexer::readSymbol() {
     ReadSymbol sym(*symbol);
     delete symbol;
     this->stack.push(sym);
-    this->cursor += increment;
+    if(moveHead) {
+        this->cursor += increment;
+    }
     return sym;
 }
 
