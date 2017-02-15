@@ -2,19 +2,22 @@
 #define TP_COMPILO_LEXER_H
 
 #include <stack>
+#include <string>
 #include "Symbole.h"
 
 class Lexer {
 public:
     // Constructor / Destructor
-    Lexer();
+    Lexer(std::string& toRead);
     ~Lexer();
 
-    // Read a symbol
-    Symbole readSymbole();
+    // Analyse a string
+    Symbole readSymbol();
 
 protected:
     std::stack<Symbole> stack;
+    std::string toRead;
+    int cursor;
 };
 
 

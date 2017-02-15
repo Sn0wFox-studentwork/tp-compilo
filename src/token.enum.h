@@ -8,7 +8,8 @@ enum Token {
     CLOSE,
     EXPR,
     EOL,
-    VAL
+    VAL,
+    EMPTY
 };
 
 #endif //TP_COMPILO_TOKEN_ENUM_H
