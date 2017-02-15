@@ -3,7 +3,7 @@
 
 enum Token {
     PLUS,
-    MINUS,
+    MULT,
     OPEN,
     CLOSE,
     EXPR,
