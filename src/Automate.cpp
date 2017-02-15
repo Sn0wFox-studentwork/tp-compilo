@@ -9,7 +9,14 @@ Automate::Automate(string toRead) : statesStack(), symbolsStack(), lexer(toRead)
 Automate::~Automate() {
     // In case that stacks are not empty,
     // we must clean them
-
+    while(!statesStack.empty()) {
+        delete statesStack.top();
+        statesStack.pop();
+    }
+    while(!symbolsStack.empty()) {
+        delete symbolsStack.top();
+        symbolsStack.pop();
+    }
 }
 
 void Automate::decalage(Symbole *s, Etat *e) {
@@ -23,4 +30,5 @@ void Automate::reduction(int n, Symbole *s) {
         delete this->statesStack.top();
         statesStack.pop();
     }
+    this->lexer.readSymbol();
 }
