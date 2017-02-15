@@ -1,6 +1,8 @@
 #include <stdarg.h>
 #include "Etat.h"
 #include "Symbole.h"
+#include "E4.ccp"
+#include "E5.ccp"
 
 bool E1 :: transition( Automate & automate, Symbole * s) {
 	switch(*s){
