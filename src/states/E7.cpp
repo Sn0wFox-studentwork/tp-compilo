@@ -6,6 +6,14 @@
 #include "../Automate.h"
 #include "../token.enum.h"
 
+E7 :: E7() : Etat() {
+    // Nothing else to do
+}
+
+E7 :: ~E7() {
+    // Nothing to do for the moment
+}
+
 bool E7 :: transition( Automate & automate, Symbole * s) {
     // TODO: what if it has nothing else to read ?
     switch(*s) {

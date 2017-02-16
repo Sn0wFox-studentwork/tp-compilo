@@ -9,13 +9,13 @@ class Automate;
 
 class Etat {
 public:
-    Etat(std::string name);
+    Etat();
     virtual ~Etat();
     void print() const;
     virtual bool transition(Automate & automate, Symbole *s) = 0;
 
-protected:
-   std::string name;
+//protected:
+//   std::string name;
 };   
       	
 #endif

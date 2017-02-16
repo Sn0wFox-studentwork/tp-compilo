@@ -6,6 +6,14 @@
 #include "../Automate.h"
 #include "../token.enum.h"
 
+E8 :: E8() : Etat() {
+    // Nothing else to do
+}
+
+E8 :: ~E8() {
+    // Nothing to do for the moment
+}
+
 bool E8 :: transition( Automate & automate, Symbole * s) {
     switch(*s) {
         case MULT:

@@ -7,6 +7,8 @@
 #include <stack>
 #include <string>
 
+class Etat;
+
 class Automate {
 public:
     Automate(std::string toRead);

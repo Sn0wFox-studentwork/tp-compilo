@@ -7,6 +7,14 @@
 #include "../Automate.h"
 #include "../token.enum.h"
 
+E5 :: E5() : Etat() {
+    // Nothing else to do
+}
+
+E5 :: ~E5() {
+    // Nothing to do for the moment
+}
+
 bool E5 :: transition(Automate & automate, Symbole * s) {
     switch(*s) {
     case EXPR:
