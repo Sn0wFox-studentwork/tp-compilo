@@ -1,17 +1,13 @@
 #include "Etat.h"
 #include "E4.h"
 #include "E5.h"
-#include "E6.h"
-#include "E9.h"
+#include "E8.h"
 #include "../Symbole.h"
 #include "../Automate.h"
 #include "../token.enum.h"
 
-bool E6 :: transition( Automate & automate, Symbole * s) {
+bool E8 :: transition( Automate & automate, Symbole * s) {
     switch(*s) {
-        case OPEN:
-            automate.decalage(s, new E9);
-            break;
         case MULT:
             automate.decalage(s, new E5);
             break;

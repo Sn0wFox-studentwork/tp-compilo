@@ -1,8 +1,11 @@
 #include "Etat.h"
-#include "Symbole.h"
-#include "E7.ccp"
-#include "E3.ccp"
-#include "E2.ccp"
+#include "E2.h"
+#include "E3.h"
+#include "E4.h"
+#include "E7.h"
+#include "../Symbole.h"
+#include "../Automate.h"
+#include "../token.enum.h"
 
 bool E4 :: transition(Automate & automate, Symbole * s) {
     switch(*s) {

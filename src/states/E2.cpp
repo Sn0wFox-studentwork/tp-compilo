@@ -1,8 +1,18 @@
 #include "Etat.h"
-#include "Symbole.h"
-#include "E3.ccp"
-#include "E6.ccp"
-#include "E2.ccp"
+#include "E2.h"
+#include "E3.h"
+#include "E6.h"
+#include "../Symbole.h"
+#include "../Automate.h"
+#include "../token.enum.h"
+
+E2 :: E2() : Etat() {
+    // Nothing else to do
+}
+
+E2 :: ~E2() {
+    // Nothing to do for the moment
+}
 
 bool E2 :: transition(Automate & automate, Symbole * s) {
 	switch(*s) {

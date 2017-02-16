@@ -9,7 +9,7 @@ class Automate;
 
 class Etat {
 public:
-    Etat (std::string name);
+    Etat(std::string name);
     virtual ~Etat();
     void print() const;
     virtual bool transition(Automate & automate, Symbole *s) = 0;
