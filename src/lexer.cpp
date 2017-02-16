@@ -5,8 +5,6 @@
 #include "Symbole.h"
 #include "token.enum.h"
 
-#include <string>
-
 using namespace std;
 
 // TODO: refactor using class Number, Expr... extending Symbole
@@ -36,8 +34,8 @@ ReadSymbol Lexer::readSymbol(bool moveHead) {
         case '+':
             symbol = new ReadSymbol(PLUS, "+");
             break;
-        case '-':
-            symbol = new ReadSymbol(MINUS, "-");
+        case '*':
+            symbol = new ReadSymbol(MULT, "*");
             break;
         case '(':
             symbol = new ReadSymbol(OPEN, "(");
@@ -47,6 +45,7 @@ ReadSymbol Lexer::readSymbol(bool moveHead) {
             break;
         default:
             // That's a digit
+            // TODO: throw error if not a digit
             string number = "";
             int cursor = this->cursor;
             while(cursor != this->toRead.size() && isdigit(this->toRead.at(cursor))) {

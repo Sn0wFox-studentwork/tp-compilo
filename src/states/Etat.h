@@ -17,4 +17,4 @@ protected:
    std::string name;
 };   
       	
-#endif 
+#endif
