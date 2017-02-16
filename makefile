@@ -21,7 +21,9 @@ OSUNIX = unix
 OSWIN = win
 OS = $(OSWIN)
 DEL =
+DELDIR =
 DELOPT =
+DELDIROPT =
 MAKEDIR =
 CC = g++
 MAINFILE = main
@@ -33,11 +35,12 @@ EXEFILE = exe
 DEBUG = yes
 
 SRCPATH = src/
-SRC = $(wildcard */*.$(SRCFILE))
-HEAD = $(wildcard */*.$(HEADFILE))
+SRC = $(wildcard $(SRCPATH)*.$(SRCFILE)) $(wildcard $(SRCPATH)*/*.$(SRCFILE))
+HEAD = $(wildcard $(SRCPATH)*.$(HEADFILE)) $(wildcard $(SRCPATH)*/*.$(HEADFILE))
 OBJPATH = build/
-OUT_DIR = build
-OBJ = $(addprefix $(OBJPATH),$(notdir $(SRC:.$(SRCFILE)=.$(OFILE))))
+OUTDIR_ROOT = build
+OUTDIR = $(OUTDIR_ROOT)
+OBJ = $(addprefix $(OBJPATH), $(SRC:$(SRCPATH)%.$(SRCFILE)=%.$(OFILE)))
 
 EXEPATH = $(OBJPATH)
 EXE1 = $(OBJPATH)tp-compilo.$(EXEFILE)
@@ -56,11 +59,17 @@ CFLAGS =
 #Compilation conditionnelle-------------------------------------
 ifeq ($(OS),$(OSWIN))
 	DEL += del
+	DELDIR += rd
 	DELOPT += /s
-	MAKEDIR += if not exist $(OUT_DIR) mkdir
+	DELDIROPT += /s /q
+	MAKEDIR += if not exist $(OUTDIR_ROOT) mkdir
+	OUTDIR += build\states
 else ifeq ($(OS),$(OSUNIX))
 	DEL += rm
+	DELDIR += rmdir
 	DELOPT += -rf
+	DELDIROPT += -rf
+	OUTDIR += build/states
 	MAKEDIR += mkdir -p
 else
 	echo Unknown OS
@@ -108,14 +117,14 @@ $(OBJPATH)%.$(OFILE) : $(SRCPATH)%.$(SRCFILE) $(SRCPATH)%.$(HEADFILE)
 	$(CC) -o $@ -c $< $(CFLAGS)
 
 makedir:
-	$(MAKEDIR) $(OUT_DIR)
+	$(MAKEDIR) $(OUTDIR)
 
 #Regles de nettoyage
 clean:
 	$(DEL) $(DELOPT) *.$(OFILE)
 	
-mrproper: clean
-	$(DEL) $(DELOPT) $(notdir $(EXECS))
+mrproper:
+	$(DELDIR) $(DELDIROPT) $(OUTDIR_ROOT)
 
 
 #Regles de debuggage
