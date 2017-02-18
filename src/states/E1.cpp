@@ -19,6 +19,7 @@ E1 :: ~E1() {
 
 bool E1 :: transition(Automate & automate, Symbol * s) {
     cout << "E1 :: transition" << endl;
+    cout << "E1 :: param :: *s :: " << *s << endl;
 	switch(*s) {
         case PLUS:
             cout << "E1:: transition :: PLUS" << endl;
@@ -33,7 +34,7 @@ bool E1 :: transition(Automate & automate, Symbol * s) {
         case EOL:
             // We've analysed the string ! Let's print the result
             cout << "E1 :: transition :: EOL" << endl;
-            cout << "Result: " << automate.pop().toString() << endl;
+            cout << "Result: " << *automate.pop() << endl;
             return true;
         default:
             // Syntax error

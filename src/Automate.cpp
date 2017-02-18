@@ -4,7 +4,6 @@
 #include "states/Etat.h"
 
 #include <iostream>
-
 using namespace std;
 
 Automate::Automate(string toRead) : statesStack(), symbolsStack(), lexer(toRead) {
@@ -29,23 +28,22 @@ void Automate::decalage(Symbol *s, Etat *e) {
     this->statesStack.push(e);
 }
 
-bool Automate::reduction(int n, Symbol *s) {
-    // TODO: understand how this is supposed to work
+void Automate::reduction(int n, Symbol *s) {
     for(int i = 0; i < n; i++) {
         delete this->statesStack.top();
         statesStack.pop();
     }
-    return this->statesStack.top()->transition(*this, s);
+    this->statesStack.top()->transition(*this, s);
 }
 
 void Automate::readMore() {
     this->lexer.readSymbol(true);
 }
 
-Symbol Automate::pop() {
+Symbol* Automate::pop() {
     Symbol * top = this->symbolsStack.top();
     this->symbolsStack.pop();
-    return *top;
+    return top;
 }
 
 void Automate::run() {
@@ -53,7 +51,9 @@ void Automate::run() {
     cout << "String to analyse: " << this->lexer.getString() << endl;
     Etat* e;
     Symbol* s;
+    int i = 0;
     do {
+        cout << "BOUCLE " << i++ << endl;
         e = this->statesStack.top();
         s = this->lexer.readSymbol(false);
     } while(!e->transition(*this, s));

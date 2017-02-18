@@ -15,9 +15,9 @@ int main() {
 
     // Analyse it
     Automate automate(s);
-    // automate.run();
+    automate.run();
 
-    test(s);
+    // test(s);
 
     return 0;
 }

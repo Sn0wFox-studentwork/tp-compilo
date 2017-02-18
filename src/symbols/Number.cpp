@@ -1,12 +1,13 @@
 #include "Number.h"
 #include "Expression.h"
+#include "../token.enum.h"
 
 #include <string>
 #include <sstream>
 using namespace std;
 
 Number::Number(int val): Expression(), value(val) {
-    // Nothing else to do
+    ident = VAL;
 }
 
 Number::~Number() {
@@ -21,4 +22,8 @@ string Number::toString() const {
 
 int Number::eval() const {
     return value;
+}
+
+void Number::mutateToExpression() {
+    this->ident = EXPR;
 }

@@ -17,9 +17,9 @@ public:
     ~Automate();
 
     void decalage(Symbol* s, Etat* e);
-    bool reduction(int n, Symbol* s);
+    void reduction(int n, Symbol* s);
     void readMore();
-    Symbol pop();
+    Symbol* pop();
     void run();
 
 protected:

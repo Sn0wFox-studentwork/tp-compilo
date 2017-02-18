@@ -20,14 +20,14 @@ E0 :: ~E0() {
 
 bool E0 :: transition(Automate & automate, Symbol * s) {
     cout << "E0 :: transition" << endl;
-    cout << "E0 :: param :: *s :: " + *s << endl;
+    cout << "E0 :: param :: *s :: " << *s << endl;
 	switch(*s) {
         case OPEN:
             cout << "E0 :: transition :: OPEN" << endl;
             automate.decalage(s, new E2);
             automate.readMore();
             break;
-        case EOL:
+        //case EOL:
         case EXPR:
             cout << "E0 :: transition :: EXPR" << endl;
             automate.decalage(s, new E1);

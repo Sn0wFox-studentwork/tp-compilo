@@ -10,6 +10,7 @@ public:
     ~Number();
     int eval() const;
     std::string toString() const;
+    void mutateToExpression();
 
 protected:
     int value;

@@ -9,6 +9,7 @@
 #include "symbols/Plus.h"
 #include "symbols/Open.h"
 #include "symbols/Close.h"
+#include "symbols/Eol.h"
 #include "token.enum.h"
 
 using namespace std;
@@ -19,7 +20,7 @@ Symbol* Lexer::readSymbol(bool moveHead) {
     // Handle the end of the string
     if(this->cursor >= this->toRead.size()) {
         // That's the end of the file
-        this->stack.push(new ReadSymbol(EOL, "eol"));
+        this->stack.push(new Eol);
         return this->stack.top();
     }
 
@@ -31,7 +32,7 @@ Symbol* Lexer::readSymbol(bool moveHead) {
     // Analyse string
     switch (c) {
         case '\0':
-            symbol = new ReadSymbol(EOL, "eol");
+            symbol = new Eol;
             break;
         case '\n':
         case '\t':
