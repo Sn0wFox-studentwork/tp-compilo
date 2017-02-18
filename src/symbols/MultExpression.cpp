@@ -23,5 +23,6 @@ string MultExpression::toString() const {
 }
 
 int MultExpression::eval() const {
+    // Just return the computed product of the two terms
     return variables[1] * variables[2];
 }

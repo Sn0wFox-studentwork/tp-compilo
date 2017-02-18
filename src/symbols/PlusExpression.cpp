@@ -23,5 +23,6 @@ string PlusExpression::toString() const {
 }
 
 int PlusExpression::eval() const {
+    // Just return the computed sum of the two terms
     return variables[1] + variables[2];
 }

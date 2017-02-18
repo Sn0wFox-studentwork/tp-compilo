@@ -83,3 +83,8 @@ Lexer::~Lexer() {
         stack.pop();
     }
 }
+
+void Lexer::load(std::string toLoad) {
+    this->toRead = toLoad;
+    this->cursor = 0;
+}

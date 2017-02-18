@@ -14,6 +14,7 @@ Expression::~Expression() {
 }
 
 std::string Expression::toString() const {
+    // Just use the one of the parent by default
     return Symbol::toString();
 }
 

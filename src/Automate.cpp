@@ -7,6 +7,7 @@
 using namespace std;
 
 Automate::Automate(string toRead) : statesStack(), symbolsStack(), lexer(toRead) {
+    // First state must be a 0
     this->statesStack.push(new E0);
 }
 
@@ -29,10 +30,12 @@ void Automate::decalage(Symbol *s, Etat *e) {
 }
 
 void Automate::reduction(int n, Symbol *s) {
+    // Reduce n states
     for(int i = 0; i < n; i++) {
         delete this->statesStack.top();
         statesStack.pop();
     }
+    // Perform next transition
     this->statesStack.top()->transition(*this, s);
 }
 
@@ -54,6 +57,7 @@ void Automate::run() {
     Etat* e;
     Symbol* s;
     do {
+        // Until done, progress through states
         e = this->statesStack.top();
         s = this->lexer.readSymbol(false);
     } while(!e->transition(*this, s));

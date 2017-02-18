@@ -10,8 +10,3 @@ Etat :: Etat() {
 Etat :: ~Etat() {
     // Nothing to do for the moment
 }
-
-// TODO: find what it is supposed to do
-void Etat :: print() const {
-    cout << "Oups, this is not implemented yet!" << endl;
-}
