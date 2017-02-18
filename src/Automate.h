@@ -47,7 +47,7 @@ public:
     /**
      * Move the lexical analyzer's reading head forward.
      */
-    void readMore() const;
+    void readMore();
 
     /**
      * Unstack the top level symbol and returns it.
