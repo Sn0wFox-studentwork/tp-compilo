@@ -14,7 +14,7 @@ E8 :: ~E8() {
     // Nothing to do for the moment
 }
 
-bool E8 :: transition( Automate & automate, Symbole * s) {
+bool E8 :: transition(Automate & automate, Symbole * s) {
     switch(*s) {
         case MULT:
             automate.decalage(s, new E5);

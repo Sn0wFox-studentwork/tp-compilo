@@ -14,7 +14,7 @@ E7 :: ~E7() {
     // Nothing to do for the moment
 }
 
-bool E7 :: transition( Automate & automate, Symbole * s) {
+bool E7 :: transition(Automate & automate, Symbole * s) {
     // TODO: what if it has nothing else to read ?
     switch(*s) {
         case MULT:

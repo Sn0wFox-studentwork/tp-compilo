@@ -15,7 +15,7 @@ E6 :: ~E6() {
     // Nothing to do for the moment
 }
 
-bool E6 :: transition( Automate & automate, Symbole * s) {
+bool E6 :: transition(Automate & automate, Symbole * s) {
     switch(*s) {
         case OPEN:
             automate.decalage(s, new E9);
