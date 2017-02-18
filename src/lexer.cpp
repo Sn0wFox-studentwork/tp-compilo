@@ -14,8 +14,6 @@
 
 using namespace std;
 
-// TODO: refactor using class Number, Expr... extending Symbol
-// TODO: refactor 'cause it's pretty ugly
 Symbol* Lexer::readSymbol(bool moveHead) {
     // Handle the end of the string
     if(this->cursor >= this->toRead.size()) {
@@ -37,8 +35,10 @@ Symbol* Lexer::readSymbol(bool moveHead) {
         case '\n':
         case '\t':
         case ' ':
-            // TODO: handle spaces correctly
-            symbol = new ReadSymbol(UNKNOWN, "empty");
+            cout << "That's a space" << endl;
+            cursor++;
+            symbol = readSymbol(moveHead);
+            cursor--;
             break;
         case '+':
             symbol = new Plus;
