@@ -1,6 +1,6 @@
 #include "Expression.h"
 #include "Symbol.h"
-#include "../token.enum.h"
+#include "../Token.enum.h"
 
 #include <ostream>
 using namespace std;

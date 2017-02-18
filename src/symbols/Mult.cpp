@@ -1,6 +1,6 @@
 #include "Mult.h"
 #include "Symbol.h"
-#include "../token.enum.h"
+#include "../Token.enum.h"
 
 #include <string>
 using namespace std;

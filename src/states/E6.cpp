@@ -5,7 +5,7 @@
 #include "E9.h"
 #include "../symbols/Symbol.h"
 #include "../Automate.h"
-#include "../token.enum.h"
+#include "../Token.enum.h"
 
 #include <iostream>
 using namespace std;

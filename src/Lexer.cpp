@@ -10,7 +10,7 @@
 #include "symbols/Open.h"
 #include "symbols/Close.h"
 #include "symbols/Eol.h"
-#include "token.enum.h"
+#include "Token.enum.h"
 
 using namespace std;
 

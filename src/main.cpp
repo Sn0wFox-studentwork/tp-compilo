@@ -1,7 +1,7 @@
 #include <iostream>
 #include <string>
 #include "Automate.h"
-#include "token.enum.h"
+#include "Token.enum.h"
 #include "symbols/ReadSymbol.h"
 
 using namespace std;

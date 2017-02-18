@@ -5,7 +5,7 @@
 #include "../symbols/PlusExpression.h"
 #include "../symbols/Number.h"
 #include "../Automate.h"
-#include "../token.enum.h"
+#include "../Token.enum.h"
 
 #include <iostream>
 using namespace std;

@@ -1,6 +1,6 @@
 #include "Number.h"
 #include "Expression.h"
-#include "../token.enum.h"
+#include "../Token.enum.h"
 
 #include <string>
 #include <sstream>
