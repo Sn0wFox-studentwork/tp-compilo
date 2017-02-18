@@ -35,7 +35,6 @@ Symbol* Lexer::readSymbol(bool moveHead) {
         case '\n':
         case '\t':
         case ' ':
-            cout << "That's a space" << endl;
             cursor++;
             symbol = readSymbol(moveHead);
             cursor--;

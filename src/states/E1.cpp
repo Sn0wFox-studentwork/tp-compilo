@@ -18,22 +18,21 @@ E1 :: ~E1() {
 }
 
 bool E1 :: transition(Automate & automate, Symbol * s) {
+#ifdef DEBUG
     cout << "E1 :: transition" << endl;
     cout << "E1 :: param :: *s :: " << *s << endl;
+#endif
 	switch(*s) {
         case PLUS:
-            cout << "E1 :: transition :: PLUS" << endl;
             automate.decalage(s, new E4);
             automate.readMore();
             break;
         case MULT:
-            cout << "E1 :: transition :: MULT" << endl;
             automate.decalage(s, new E5);
             automate.readMore();
             break;
         case EOL:
             // We've analysed the string ! Let's print the result
-            cout << "E1 :: transition :: EOL" << endl;
             cout << "Result: " << *automate.pop() << endl;
             return true;
         default:

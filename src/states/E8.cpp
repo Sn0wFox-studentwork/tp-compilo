@@ -18,8 +18,10 @@ E8 :: ~E8() {
 }
 
 bool E8 :: transition(Automate & automate, Symbol * s) {
+#ifdef DEBUG
     cout << "E8 :: transition" << endl;
     cout << "E8 :: param :: *s :: " << *s << endl;
+#endif
     Symbol* value1;
     Symbol* value2;
     Number* n1;
@@ -46,7 +48,7 @@ bool E8 :: transition(Automate & automate, Symbol * s) {
             // Let's go to the default case
         default:
             // Syntax error
-            cout << "E8 :: syntax error" << endl;
+            cerr << "E8 :: syntax error" << endl;
             return true;
     }
 }

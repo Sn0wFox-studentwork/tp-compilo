@@ -47,8 +47,10 @@ Symbol* Automate::pop() {
 }
 
 void Automate::run() {
+#ifdef DEBUG
     cout << "RUN" << endl;
     cout << "String to analyse: " << this->lexer.getString() << endl;
+#endif
     Etat* e;
     Symbol* s;
     int i = 0;
@@ -56,5 +58,7 @@ void Automate::run() {
         e = this->statesStack.top();
         s = this->lexer.readSymbol(false);
     } while(!e->transition(*this, s));
+#ifdef DEBUG
     cout << "DONE" << endl;
+#endif
 }

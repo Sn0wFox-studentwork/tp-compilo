@@ -18,8 +18,10 @@ E9 :: ~E9() {
 }
 
 bool E9 :: transition(Automate & automate, Symbol * s) {
+#ifdef DEBUG
     cout << "E9 :: transition" << endl;
     cout << "E9 :: param :: *s :: " << *s << endl;
+#endif
     Symbol* value;
     Expression* e;
     switch(*s) {
@@ -31,7 +33,6 @@ bool E9 :: transition(Automate & automate, Symbol * s) {
             value = automate.pop();
             automate.pop();
             e = dynamic_cast<Expression*>(value);
-            cout << "E9 :: transition :: reduction" << endl;
             if(e) {
                 Number* n = new Number(e->eval());
                 n->mutateToExpression();
@@ -43,7 +44,7 @@ bool E9 :: transition(Automate & automate, Symbol * s) {
             // Let's go to the default case
         default:
             // Syntax error
-            cout << "E9 :: syntax error" << endl;
+            cerr << "E9 :: syntax error" << endl;
             return true;
     }
 }

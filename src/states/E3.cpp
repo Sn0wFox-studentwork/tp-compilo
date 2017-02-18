@@ -18,8 +18,10 @@ E3 :: ~E3() {
 }
 
 bool E3 :: transition(Automate & automate, Symbol * s) {
+#ifdef DEBUG
     cout << "E3 :: transition" << endl;
     cout << "E3 :: param :: *s :: " << *s << endl;
+#endif
     Symbol* value;
     Number* n;
     switch(*s) {
@@ -29,7 +31,6 @@ bool E3 :: transition(Automate & automate, Symbol * s) {
         case CLOSE:
             value = automate.pop();
             n = dynamic_cast<Number*>(value);
-            cout << "E3 :: transition :: reduction" << endl;
             if(n) {
                 n->mutateToExpression();
                 automate.reduction(1, n);

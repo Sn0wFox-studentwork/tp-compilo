@@ -19,20 +19,19 @@ E5 :: ~E5() {
 }
 
 bool E5 :: transition(Automate & automate, Symbol * s) {
+#ifdef DEBUG
     cout << "E5 :: transition" << endl;
     cout << "E5 :: param :: *s :: " << *s << endl;
-    switch(*s) {
+#endif
+        switch(*s) {
         case EXPR:
-            cout << "E5 :: transition :: EXPR" << endl;
             automate.decalage(s, new E8);
             break;
         case VAL:
-            cout << "E5 :: transition :: VAL" << endl;
             automate.decalage(s, new E3);
             automate.readMore();
             break;
         case OPEN:
-            cout << "E5 :: transition :: OPEN" << endl;
             automate.decalage(s, new E2);
             automate.readMore();
             break;

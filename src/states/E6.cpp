@@ -19,8 +19,10 @@ E6 :: ~E6() {
 }
 
 bool E6 :: transition(Automate & automate, Symbol * s) {
+#ifdef DEBUG
     cout << "E6 :: transition" << endl;
     cout << "E6 :: param :: *s :: " << *s << endl;
+#endif
     switch(*s) {
         case CLOSE:
             automate.decalage(s, new E9);
@@ -34,6 +36,10 @@ bool E6 :: transition(Automate & automate, Symbol * s) {
             automate.decalage(s, new E4);
             automate.readMore();
             break;
+        default:
+            // Syntax error
+            cerr << "E6 :: syntax error" << endl;
+            return true;
     }
     return false;
 }
