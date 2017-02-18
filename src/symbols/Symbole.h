@@ -14,6 +14,8 @@ public:
     virtual std::string toString() const;
 
     operator int() const { return ident; }
+
+    operator std::string() const { return toString(); }
 };
 
 #endif //TP_COMPILO_SYMBOLE_H
