@@ -1,5 +1,5 @@
 #include "E9.h"
-#include "../Symbole.h"
+#include "../symbols/Symbole.h"
 #include "../Automate.h"
 
 E9 :: E9() : Etat() {

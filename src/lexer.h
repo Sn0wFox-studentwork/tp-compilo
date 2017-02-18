@@ -3,7 +3,7 @@
 
 #include <stack>
 #include <string>
-#include "ReadSymbol.h"
+#include "symbols/ReadSymbol.h"
 
 class Lexer {
 public:

@@ -1,5 +1,5 @@
 #include "Automate.h"
-#include "Symbole.h"
+#include "symbols/Symbole.h"
 #include "states/E0.h"
 #include "states/Etat.h"
 

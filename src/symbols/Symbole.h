@@ -1,6 +1,8 @@
 #ifndef TP_COMPILO_SYMBOLE_H
 #define TP_COMPILO_SYMBOLE_H
 
+#include <string>
+
 class Symbole {
 protected:
     int ident;
@@ -9,7 +11,7 @@ public:
 
     virtual ~Symbole();
 
-    void print();
+    virtual std::string toString() const;
 
     operator int() const { return ident; }
 };

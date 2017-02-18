@@ -3,7 +3,7 @@
 
 #include "Etat.h"
 #include "../Automate.h"
-#include "../Symbole.h"
+#include "../symbols/Symbole.h"
 
 class E9 : public Etat {
 public:

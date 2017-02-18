@@ -1,13 +1,13 @@
 #ifndef TP_COMPILO_AUTOMATE_H
 #define TP_COMPILO_AUTOMATE_H
 
-#include "Symbole.h"
+#include "symbols/Symbole.h"
 #include "states/Etat.h"
 #include "lexer.h"
 #include <stack>
 #include <string>
 
-#include "Symbole.h"
+#include "symbols/Symbole.h"
 
 class Etat;
 

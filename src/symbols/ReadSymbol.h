@@ -13,6 +13,7 @@ public:
     ~ReadSymbol();
 
     std::string getCharacter();
+    virtual std::string toString();
 };
 
 

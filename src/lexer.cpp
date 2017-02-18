@@ -2,7 +2,7 @@
 #include <string>
 #include <cstdlib>
 #include "lexer.h"
-#include "Symbole.h"
+#include "symbols/Symbole.h"
 #include "token.enum.h"
 
 using namespace std;
@@ -29,7 +29,8 @@ ReadSymbol Lexer::readSymbol(bool moveHead) {
         case '\n':
         case '\t':
         case ' ':
-            symbol = new ReadSymbol(EMPTY, "empty");
+            // TODO: handle spaces correctly
+            symbol = new ReadSymbol(UNKNOWN, "empty");
             break;
         case '+':
             symbol = new ReadSymbol(PLUS, "+");

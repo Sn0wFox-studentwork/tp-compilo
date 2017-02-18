@@ -63,13 +63,13 @@ ifeq ($(OS),$(OSWIN))
 	DELOPT += /s
 	DELDIROPT += /s /q
 	MAKEDIR += if not exist $(OUTDIR_ROOT) mkdir
-	OUTDIR += build\states
+	OUTDIR += build\states build\symbols
 else ifeq ($(OS),$(OSUNIX))
 	DEL += rm
 	DELDIR += rmdir
 	DELOPT += -rf
 	DELDIROPT += -rf
-	OUTDIR += build/states
+	OUTDIR += build/states build/symbols
 	MAKEDIR += mkdir -p
 else
 	echo Unknown OS

@@ -2,7 +2,7 @@
 #define TP_COMPILO_ETAT_H
 
 #include <string>
-#include "../Symbole.h"
+#include "../symbols/Symbole.h"
 #include "../Automate.h"
 
 class Automate;

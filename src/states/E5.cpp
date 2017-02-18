@@ -3,7 +3,7 @@
 #include "E3.h"
 #include "E5.h"
 #include "E8.h"
-#include "../Symbole.h"
+#include "../symbols/Symbole.h"
 #include "../Automate.h"
 #include "../token.enum.h"
 

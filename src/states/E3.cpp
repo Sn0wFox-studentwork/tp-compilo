@@ -1,6 +1,6 @@
 #include "Etat.h"
 #include "E3.h"
-#include "../Symbole.h"
+#include "../symbols/Symbole.h"
 #include "../Automate.h"
 #include "../token.enum.h"
 

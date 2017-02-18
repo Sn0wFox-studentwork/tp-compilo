@@ -2,7 +2,6 @@
 #include "Symbole.h"
 
 #include <string>
-
 using namespace std;
 
 ReadSymbol::ReadSymbol(int id, string character) : Symbole(id), read(character) {
@@ -15,4 +14,8 @@ ReadSymbol::~ReadSymbol() {
 
 string ReadSymbol::getCharacter() {
     return this->read;
+}
+
+string ReadSymbol::toString() {
+    return this->getCharacter();
 }
