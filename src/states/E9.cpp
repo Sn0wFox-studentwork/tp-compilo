@@ -27,13 +27,15 @@ bool E9 :: transition(Automate & automate, Symbol * s) {
         case PLUS:
         case CLOSE:
         case EOL:
+            automate.pop();
             value = automate.pop();
+            automate.pop();
             e = dynamic_cast<Expression*>(value);
             cout << "E9 :: transition :: reduction" << endl;
             if(e) {
                 Number* n = new Number(e->eval());
                 n->mutateToExpression();
-                automate.reduction(1, n);
+                automate.reduction(3, n);
                 return false;
             }
             // Wow, that's not supposed to be possible

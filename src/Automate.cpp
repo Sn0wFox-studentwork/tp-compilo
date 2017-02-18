@@ -53,7 +53,6 @@ void Automate::run() {
     Symbol* s;
     int i = 0;
     do {
-        cout << "BOUCLE " << i++ << endl;
         e = this->statesStack.top();
         s = this->lexer.readSymbol(false);
     } while(!e->transition(*this, s));
