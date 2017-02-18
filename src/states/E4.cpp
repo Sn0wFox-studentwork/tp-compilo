@@ -25,7 +25,6 @@ bool E4 :: transition(Automate & automate, Symbol * s) {
         case EXPR:
             cout << "E4 :: transition :: EXPR" << endl;
             automate.decalage(s, new E7);
-            automate.readMore();
             break;
         case VAL:
             cout << "E4 :: transition :: VAL" << endl;

@@ -7,6 +7,9 @@
 #include "../Automate.h"
 #include "../token.enum.h"
 
+#include <iostream>
+using namespace std;
+
 E5 :: E5() : Etat() {
     // Nothing else to do
 }
@@ -16,16 +19,27 @@ E5 :: ~E5() {
 }
 
 bool E5 :: transition(Automate & automate, Symbol * s) {
+    cout << "E5 :: transition" << endl;
+    cout << "E5 :: param :: *s :: " << *s << endl;
     switch(*s) {
         case EXPR:
+            cout << "E5 :: transition :: EXPR" << endl;
             automate.decalage(s, new E8);
             break;
         case VAL:
+            cout << "E5 :: transition :: VAL" << endl;
             automate.decalage(s, new E3);
+            automate.readMore();
             break;
         case OPEN:
+            cout << "E5 :: transition :: OPEN" << endl;
             automate.decalage(s, new E2);
+            automate.readMore();
             break;
+        default:
+            // Syntax error
+            cerr << "E5 :: syntax error" << endl;
+            return true;
         }
     return false;
 }

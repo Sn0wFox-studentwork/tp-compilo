@@ -9,7 +9,7 @@ class E3 : public Etat {
 public:
     E3();
     ~E3();
-    virtual bool transition(Automate & automate, Symbol * s);
+    bool transition(Automate & automate, Symbol * s);
 };
 
 #endif //TP_COMPILO_E0_H

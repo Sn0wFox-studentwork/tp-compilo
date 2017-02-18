@@ -1,10 +1,9 @@
 #include "Etat.h"
-#include "E4.h"
 #include "E5.h"
 #include "E7.h"
 #include "../symbols/Symbol.h"
-#include "../symbols/Number.h"
 #include "../symbols/PlusExpression.h"
+#include "../symbols/Number.h"
 #include "../Automate.h"
 #include "../token.enum.h"
 
@@ -56,4 +55,5 @@ bool E7 :: transition(Automate & automate, Symbol * s) {
             cout << "E7 :: syntax error" << endl;
             return true;
     }
+    return false;
 }

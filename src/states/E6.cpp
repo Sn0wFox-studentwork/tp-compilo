@@ -7,6 +7,9 @@
 #include "../Automate.h"
 #include "../token.enum.h"
 
+#include <iostream>
+using namespace std;
+
 E6 :: E6() : Etat() {
     // Nothing else to do
 }
@@ -16,15 +19,20 @@ E6 :: ~E6() {
 }
 
 bool E6 :: transition(Automate & automate, Symbol * s) {
+    cout << "E6 :: transition" << endl;
+    cout << "E6 :: param :: *s :: " << *s << endl;
     switch(*s) {
-        case OPEN:
+        case CLOSE:
             automate.decalage(s, new E9);
+            automate.readMore();
             break;
         case MULT:
             automate.decalage(s, new E5);
+            automate.readMore();
             break;
         case PLUS:
             automate.decalage(s, new E4);
+            automate.readMore();
             break;
     }
     return false;
