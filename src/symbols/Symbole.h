@@ -13,9 +13,11 @@ public:
 
     virtual std::string toString() const;
 
-    operator int() const { return ident; }
+    operator const char*() const { return toString().c_str(); }
 
-    operator std::string() const { return toString(); }
+    // operator const std::string() const { return toString(); }
+
+    operator int() const { return ident; }
 };
 
 #endif //TP_COMPILO_SYMBOLE_H
