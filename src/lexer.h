@@ -14,6 +14,12 @@ public:
     // Analyse a string
     // If moveHead is set to true, consumes the current character
     ReadSymbol readSymbol(bool moveHead = true);
+    std::string getString() {
+        return this->toRead;
+    }
+    void load(std::string toLoad) {
+        this->toRead = toLoad;
+    }
 
 protected:
     std::stack<ReadSymbol> stack;
