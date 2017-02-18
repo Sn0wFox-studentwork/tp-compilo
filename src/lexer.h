@@ -24,7 +24,7 @@ public:
 protected:
     std::stack<Symbol*> stack;
     std::string toRead;
-    int cursor;
+    std::size_t cursor;
 };
 
 

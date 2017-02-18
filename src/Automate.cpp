@@ -53,7 +53,6 @@ void Automate::run() {
 #endif
     Etat* e;
     Symbol* s;
-    int i = 0;
     do {
         e = this->statesStack.top();
         s = this->lexer.readSymbol(false);

@@ -55,7 +55,7 @@ Symbol* Lexer::readSymbol(bool moveHead) {
             // That's a digit
             // TODO: throw error if not a digit
             string number = "";
-            int cursor = this->cursor;
+            size_t cursor = this->cursor;
             while(cursor != this->toRead.size() && isdigit(this->toRead.at(cursor))) {
                 number += this->toRead.at(cursor);
                 cursor++;
