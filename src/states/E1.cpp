@@ -22,12 +22,12 @@ bool E1 :: transition(Automate & automate, Symbol * s) {
     cout << "E1 :: param :: *s :: " << *s << endl;
 	switch(*s) {
         case PLUS:
-            cout << "E1:: transition :: PLUS" << endl;
+            cout << "E1 :: transition :: PLUS" << endl;
             automate.decalage(s, new E4);
             automate.readMore();
             break;
         case MULT:
-            cout << "E1:: transition :: MULT" << endl;
+            cout << "E1 :: transition :: MULT" << endl;
             automate.decalage(s, new E5);
             automate.readMore();
             break;

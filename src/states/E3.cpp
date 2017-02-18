@@ -37,7 +37,7 @@ bool E3 :: transition(Automate & automate, Symbol * s) {
             }
             // Wow, that's not supposed to be possible
             cerr << "E3 :: BIG ERROR: LAST SYMBOL WASN'T A NUMBER" << endl;
-            return true;
+            // Let's go to the default case
         default:
             // Syntax error
             cerr << "E3 :: syntax error" << endl;
