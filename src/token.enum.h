@@ -2,14 +2,14 @@
 #define TP_COMPILO_TOKEN_ENUM_H
 
 enum Token {
+    UNKNOWN = -1,
     PLUS,
     MULT,
     OPEN,
     CLOSE,
-    EXPR,
-    EOL,
     VAL,
-    EMPTY
+    EXPR,
+    EOL
 };
 
 #endif //TP_COMPILO_TOKEN_ENUM_H
