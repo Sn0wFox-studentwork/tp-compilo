@@ -4,7 +4,7 @@
 #include <string>
 #include "Expression.h"
 
-class MultExpression : Expression {
+class MultExpression : public Expression {
 public:
     MultExpression(int var1, int var2);
     ~MultExpression();

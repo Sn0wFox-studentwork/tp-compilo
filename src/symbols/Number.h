@@ -4,7 +4,7 @@
 #include <string>
 #include "Expression.h"
 
-class Number : Expression {
+class Number : public Expression {
 public:
     Number(int value);
     ~Number();

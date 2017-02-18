@@ -4,7 +4,7 @@
 #include <string>
 #include "Expression.h"
 
-class PlusExpression : Expression {
+class PlusExpression : public Expression {
 public:
     PlusExpression(int var1, int var2);
     ~PlusExpression();
