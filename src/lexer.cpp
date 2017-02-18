@@ -3,13 +3,14 @@
 #include <cstdlib>
 #include "lexer.h"
 #include "symbols/Symbole.h"
+#include "symbols/ReadSymbol.h"
 #include "token.enum.h"
 
 using namespace std;
 
 // TODO: refactor using class Number, Expr... extending Symbole
 // TODO: refactor 'cause it's pretty ugly
-ReadSymbol Lexer::readSymbol(bool moveHead) {
+Symbole Lexer::readSymbol(bool moveHead) {
     // Handle the end of the string
     if(this->cursor == this->toRead.size()) {
         // That's the end of the file
