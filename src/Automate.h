@@ -7,6 +7,8 @@
 #include <stack>
 #include <string>
 
+#include "Symbole.h"
+
 class Etat;
 
 class Automate {
@@ -15,7 +17,10 @@ public:
     ~Automate();
 
     void decalage(Symbole* s, Etat* e);
-    void reduction(int n, Symbole* s);
+    bool reduction(int n, Symbole* s);
+    void readMore();
+    Symbole pop();
+    void run();
 
 protected:
     std::stack<Etat*> statesStack;
