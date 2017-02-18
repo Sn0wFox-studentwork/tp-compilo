@@ -1,7 +1,7 @@
 #include <iostream>
 #include <string>
 #include <cstdlib>
-#include "lexer.h"
+#include "Lexer.h"
 #include "symbols/Symbol.h"
 #include "symbols/ReadSymbol.h"
 #include "symbols/Number.h"

@@ -3,7 +3,7 @@
 
 #include "symbols/Symbol.h"
 #include "states/Etat.h"
-#include "lexer.h"
+#include "Lexer.h"
 #include <stack>
 #include <string>
 
