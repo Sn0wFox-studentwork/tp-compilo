@@ -3,13 +3,13 @@
 
 #include "Etat.h"
 #include "../Automate.h"
-#include "../symbols/Symbole.h"
+#include "../symbols/Symbol.h"
 
 class E2 : public Etat {
 public:
     E2();
     ~E2();
-    virtual bool transition(Automate & automate, Symbole * s);
+    virtual bool transition(Automate & automate, Symbol * s);
 };
 
 #endif //TP_COMPILO_E0_H

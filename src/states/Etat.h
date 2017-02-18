@@ -2,7 +2,7 @@
 #define TP_COMPILO_ETAT_H
 
 #include <string>
-#include "../symbols/Symbole.h"
+#include "../symbols/Symbol.h"
 #include "../Automate.h"
 
 class Automate;
@@ -12,7 +12,7 @@ public:
     Etat();
     virtual ~Etat();
     void print() const;
-    virtual bool transition(Automate & automate, Symbole *s) = 0;
+    virtual bool transition(Automate & automate, Symbol *s) = 0;
 
 //protected:
 //   std::string name;

@@ -1,8 +1,11 @@
 #include "Expression.h"
-#include "Symbole.h"
+#include "Symbol.h"
 #include "../token.enum.h"
 
-Expression::Expression() : Symbole(EXPR) {
+#include <ostream>
+using namespace std;
+
+Expression::Expression() : Symbol(EXPR) {
     // Nothing else to do
 }
 
@@ -11,5 +14,10 @@ Expression::~Expression() {
 }
 
 std::string Expression::toString() const {
-    return Symbole::toString();
+    return Symbol::toString();
+}
+
+ostream& operator<<(ostream& ofs, const Expression& s) {
+    ofs << s.toString();
+    return ofs;
 }

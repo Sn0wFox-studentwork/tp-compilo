@@ -1,11 +1,11 @@
 #include "Mult.h"
-#include "Symbole.h"
+#include "Symbol.h"
 #include "../token.enum.h"
 
 #include <string>
 using namespace std;
 
-Mult::Mult() : Symbole(MULT) {
+Mult::Mult() : Symbol(MULT) {
     // Nothing else to do
 }
 

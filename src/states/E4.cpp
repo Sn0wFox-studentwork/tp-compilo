@@ -3,7 +3,7 @@
 #include "E3.h"
 #include "E4.h"
 #include "E7.h"
-#include "../symbols/Symbole.h"
+#include "../symbols/Symbol.h"
 #include "../Automate.h"
 #include "../token.enum.h"
 
@@ -15,7 +15,7 @@ E4 :: ~E4() {
     // Nothing to do for the moment
 }
 
-bool E4 :: transition(Automate & automate, Symbole * s) {
+bool E4 :: transition(Automate & automate, Symbol * s) {
     switch(*s) {
         case EXPR:
             automate.decalage(s, new E7);

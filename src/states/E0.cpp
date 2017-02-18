@@ -3,7 +3,7 @@
 #include "E1.h"
 #include "E2.h"
 #include "E3.h"
-#include "../symbols/Symbole.h"
+#include "../symbols/Symbol.h"
 #include "../Automate.h"
 #include "../token.enum.h"
 
@@ -18,9 +18,9 @@ E0 :: ~E0() {
     // Nothing to do for the moment
 }
 
-bool E0 :: transition(Automate & automate, Symbole * s) {
+bool E0 :: transition(Automate & automate, Symbol * s) {
     cout << "E0 :: transition" << endl;
-    cout << "E0 :: param :: *s :: " << *s << endl;
+    cout << "E0 :: param :: *s :: " + *s << endl;
 	switch(*s) {
         case OPEN:
             cout << "E0 :: transition :: OPEN" << endl;

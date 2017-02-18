@@ -2,7 +2,7 @@
 #include "E1.h"
 #include "E4.h"
 #include "E5.h"
-#include "../symbols/Symbole.h"
+#include "../symbols/Symbol.h"
 #include "../Automate.h"
 #include "../token.enum.h"
 
@@ -17,7 +17,7 @@ E1 :: ~E1() {
     // Nothing to do for the moment
 }
 
-bool E1 :: transition(Automate & automate, Symbole * s) {
+bool E1 :: transition(Automate & automate, Symbol * s) {
     cout << "E1 :: transition" << endl;
 	switch(*s) {
         case PLUS:
@@ -34,6 +34,10 @@ bool E1 :: transition(Automate & automate, Symbole * s) {
             // We've analysed the string ! Let's print the result
             cout << "E1 :: transition :: EOL" << endl;
             cout << "Result: " << automate.pop().toString() << endl;
+            return true;
+        default:
+            // Syntax error
+            cerr << "E1 :: syntax error" << endl;
             return true;
     }
     return false;

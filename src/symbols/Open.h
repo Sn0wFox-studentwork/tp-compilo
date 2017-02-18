@@ -2,9 +2,9 @@
 #define TP_COMPILO_OPEN_H
 
 #include <string>
-#include "Symbole.h"
+#include "Symbol.h"
 
-class Open : public Symbole {
+class Open : public Symbol {
 public:
     Open();
     ~Open();

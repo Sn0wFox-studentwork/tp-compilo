@@ -1,11 +1,11 @@
 #include "Plus.h"
-#include "Symbole.h"
+#include "Symbol.h"
 #include "../token.enum.h"
 
 #include <string>
 using namespace std;
 
-Plus::Plus() : Symbole(PLUS) {
+Plus::Plus() : Symbol(PLUS) {
     // Nothing else to do
 }
 

@@ -1,6 +1,6 @@
 #include "Etat.h"
 #include "E3.h"
-#include "../symbols/Symbole.h"
+#include "../symbols/Symbol.h"
 #include "../Automate.h"
 #include "../token.enum.h"
 
@@ -15,9 +15,9 @@ E3 :: ~E3() {
     // Nothing to do for the moment
 }
 
-bool E3 :: transition(Automate & automate, Symbole * s) {
+bool E3 :: transition(Automate & automate, Symbol * s) {
     cout << "E3 :: transition" << endl;
-    Symbole value(EXPR);
+    Symbol value(EXPR);
     switch(*s) {
         case PLUS:
         case MULT:
@@ -29,6 +29,6 @@ bool E3 :: transition(Automate & automate, Symbole * s) {
         default:
             // Syntax error
             cerr << "E3 :: syntax error" << endl;
-            return true;
+            return false;
     }
 }

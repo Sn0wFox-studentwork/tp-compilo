@@ -1,11 +1,11 @@
 #include "Close.h"
-#include "Symbole.h"
+#include "Symbol.h"
 #include "../token.enum.h"
 
 #include <string>
 using namespace std;
 
-Close::Close() : Symbole(CLOSE) {
+Close::Close() : Symbol(CLOSE) {
     // Nothing else to do
 }
 

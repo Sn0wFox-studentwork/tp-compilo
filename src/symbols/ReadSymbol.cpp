@@ -1,10 +1,10 @@
 #include "ReadSymbol.h"
-#include "Symbole.h"
+#include "Symbol.h"
 
 #include <string>
 using namespace std;
 
-ReadSymbol::ReadSymbol(int id, string character) : Symbole(id), read(character) {
+ReadSymbol::ReadSymbol(int id, string character) : Symbol(id), read(character) {
     // Nothing else to do
 }
 

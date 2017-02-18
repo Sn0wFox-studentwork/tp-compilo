@@ -2,9 +2,9 @@
 #define TP_COMPILO_CLOSE_H
 
 #include <string>
-#include "Symbole.h"
+#include "Symbol.h"
 
-class Close : public Symbole {
+class Close : public Symbol {
 public:
     Close();
     ~Close();

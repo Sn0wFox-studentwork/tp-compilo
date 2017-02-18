@@ -3,14 +3,16 @@
 
 #include <string>
 #include <vector>
-#include "Symbole.h"
+#include "Symbol.h"
 
-class Expression : public Symbole {
+class Expression : public Symbol {
 public:
     Expression();
     virtual ~Expression();
     virtual int eval() const = 0;
     std::string toString() const;
+
+    friend std::ostream& operator<<(std::ostream& ofs, const Expression& s);
 };
 
 

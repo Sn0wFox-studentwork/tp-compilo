@@ -1,5 +1,5 @@
 #include "Automate.h"
-#include "symbols/Symbole.h"
+#include "symbols/Symbol.h"
 #include "states/E0.h"
 #include "states/Etat.h"
 
@@ -24,12 +24,12 @@ Automate::~Automate() {
     }
 }
 
-void Automate::decalage(Symbole *s, Etat *e) {
+void Automate::decalage(Symbol *s, Etat *e) {
     this->symbolsStack.push(s);
     this->statesStack.push(e);
 }
 
-bool Automate::reduction(int n, Symbole *s) {
+bool Automate::reduction(int n, Symbol *s) {
     // TODO: understand how this is supposed to work
     for(int i = 0; i < n; i++) {
         delete this->statesStack.top();
@@ -42,8 +42,8 @@ void Automate::readMore() {
     this->lexer.readSymbol(true);
 }
 
-Symbole Automate::pop() {
-    Symbole * top = this->symbolsStack.top();
+Symbol Automate::pop() {
+    Symbol * top = this->symbolsStack.top();
     this->symbolsStack.pop();
     return *top;
 }
@@ -52,7 +52,7 @@ void Automate::run() {
     cout << "RUN" << endl;
     cout << "String to analyse: " << this->lexer.getString() << endl;
     Etat* e;
-    Symbole* s;
+    Symbol* s;
     do {
         e = this->statesStack.top();
         s = this->lexer.readSymbol(false);

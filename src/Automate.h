@@ -1,13 +1,13 @@
 #ifndef TP_COMPILO_AUTOMATE_H
 #define TP_COMPILO_AUTOMATE_H
 
-#include "symbols/Symbole.h"
+#include "symbols/Symbol.h"
 #include "states/Etat.h"
 #include "lexer.h"
 #include <stack>
 #include <string>
 
-#include "symbols/Symbole.h"
+#include "symbols/Symbol.h"
 
 class Etat;
 
@@ -16,15 +16,15 @@ public:
     Automate(std::string toRead);
     ~Automate();
 
-    void decalage(Symbole* s, Etat* e);
-    bool reduction(int n, Symbole* s);
+    void decalage(Symbol* s, Etat* e);
+    bool reduction(int n, Symbol* s);
     void readMore();
-    Symbole pop();
+    Symbol pop();
     void run();
 
 protected:
     std::stack<Etat*> statesStack;
-    std::stack<Symbole*> symbolsStack;
+    std::stack<Symbol*> symbolsStack;
     Lexer lexer;
 };
 

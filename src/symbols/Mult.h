@@ -2,9 +2,9 @@
 #define TP_COMPILO_MULT_H
 
 #include <string>
-#include "Symbole.h"
+#include "Symbol.h"
 
-class Mult : public Symbole {
+class Mult : public Symbol {
 public:
     Mult();
     ~Mult();

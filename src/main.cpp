@@ -24,12 +24,12 @@ int main() {
 
 void test(string& s) {
     Lexer l(s);
-    Symbole* symbol = l.readSymbol();
+    Symbol* symbol = l.readSymbol();
 
     while(*symbol != EOL) {
 
         // Treat symbol
-        cout << ("Symbol read: " + symbol->toString()) << endl;
+        cout << "Symbol read: " << *symbol << endl;
         symbol = l.readSymbol(true);
     }
 

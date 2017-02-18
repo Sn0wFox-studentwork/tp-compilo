@@ -3,7 +3,7 @@
 
 #include <stack>
 #include <string>
-#include "symbols/Symbole.h"
+#include "symbols/Symbol.h"
 
 class Lexer {
 public:
@@ -13,7 +13,7 @@ public:
 
     // Analyse a string
     // If moveHead is set to true, consumes the current character
-    Symbole* readSymbol(bool moveHead = true);
+    Symbol* readSymbol(bool moveHead = true);
     std::string getString() {
         return this->toRead;
     }
@@ -22,7 +22,7 @@ public:
     }
 
 protected:
-    std::stack<Symbole*> stack;
+    std::stack<Symbol*> stack;
     std::string toRead;
     int cursor;
 };

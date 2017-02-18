@@ -2,9 +2,9 @@
 #define TP_COMPILO_PLUS_H
 
 #include <string>
-#include "Symbole.h"
+#include "Symbol.h"
 
-class Plus : public Symbole {
+class Plus : public Symbol {
 public:
     Plus();
     ~Plus();

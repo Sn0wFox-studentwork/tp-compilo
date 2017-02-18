@@ -2,7 +2,7 @@
 #include <string>
 #include <cstdlib>
 #include "lexer.h"
-#include "symbols/Symbole.h"
+#include "symbols/Symbol.h"
 #include "symbols/ReadSymbol.h"
 #include "symbols/Number.h"
 #include "symbols/Mult.h"
@@ -13,9 +13,9 @@
 
 using namespace std;
 
-// TODO: refactor using class Number, Expr... extending Symbole
+// TODO: refactor using class Number, Expr... extending Symbol
 // TODO: refactor 'cause it's pretty ugly
-Symbole* Lexer::readSymbol(bool moveHead) {
+Symbol* Lexer::readSymbol(bool moveHead) {
     // Handle the end of the string
     if(this->cursor >= this->toRead.size()) {
         // That's the end of the file
@@ -26,7 +26,7 @@ Symbole* Lexer::readSymbol(bool moveHead) {
     // Used variables
     char c = this->toRead.at(this->cursor);
     int increment = 1;
-    Symbole* symbol;
+    Symbol* symbol;
 
     // Analyse string
     switch (c) {
