@@ -55,8 +55,7 @@ void Automate::run() {
     Symbole* s;
     do {
         e = this->statesStack.top();
-        Symbole temp = this->lexer.readSymbol(false);
-        s = &temp;
+        s = this->lexer.readSymbol(false);
     } while(!e->transition(*this, s));
     cout << "DONE" << endl;
 }

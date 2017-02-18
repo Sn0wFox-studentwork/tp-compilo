@@ -1,35 +1,37 @@
 #include <iostream>
+#include <string>
 #include "Automate.h"
 #include "token.enum.h"
 #include "symbols/ReadSymbol.h"
 
 using namespace std;
 
+void test(string& s);
+
 int main() {
     // Get the string to analyse
     string s;
     getline(cin, s);
 
-    ReadSymbol test(EXPR, "568");
-    Symbole test2(EXPR);
-    cout << test.toString() << endl;
-    cout << test2.toString() << endl;
-
     // Analyse it
     Automate automate(s);
-    automate.run();
+    // automate.run();
 
-
-//    ReadSymbol symbol = lexer.readSymbol();
-//
-//    while(symbol != EOL) {
-//
-//        // Treat symbol
-//        cout << "Symbol read: " << symbol.getCharacter() << endl;
-//        symbol = lexer.readSymbol();
-//    }
-//
-//    cout << "End of line reached!" << endl;
+    test(s);
 
     return 0;
+}
+
+void test(string& s) {
+    Lexer l(s);
+    Symbole* symbol = l.readSymbol();
+
+    while(*symbol != EOL) {
+
+        // Treat symbol
+        cout << ("Symbol read: " + symbol->toString()) << endl;
+        symbol = l.readSymbol(true);
+    }
+
+    cout << "End of line reached!" << endl;
 }

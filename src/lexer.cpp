@@ -4,23 +4,29 @@
 #include "lexer.h"
 #include "symbols/Symbole.h"
 #include "symbols/ReadSymbol.h"
+#include "symbols/Number.h"
+#include "symbols/Mult.h"
+#include "symbols/Plus.h"
+#include "symbols/Open.h"
+#include "symbols/Close.h"
 #include "token.enum.h"
 
 using namespace std;
 
 // TODO: refactor using class Number, Expr... extending Symbole
 // TODO: refactor 'cause it's pretty ugly
-Symbole Lexer::readSymbol(bool moveHead) {
+Symbole* Lexer::readSymbol(bool moveHead) {
     // Handle the end of the string
-    if(this->cursor == this->toRead.size()) {
+    if(this->cursor >= this->toRead.size()) {
         // That's the end of the file
-        return ReadSymbol(EOL, "eol");
+        this->stack.push(new ReadSymbol(EOL, "eol"));
+        return this->stack.top();
     }
 
     // Used variables
     char c = this->toRead.at(this->cursor);
     int increment = 1;
-    ReadSymbol* symbol;
+    Symbole* symbol;
 
     // Analyse string
     switch (c) {
@@ -34,16 +40,16 @@ Symbole Lexer::readSymbol(bool moveHead) {
             symbol = new ReadSymbol(UNKNOWN, "empty");
             break;
         case '+':
-            symbol = new ReadSymbol(PLUS, "+");
+            symbol = new Plus;
             break;
         case '*':
-            symbol = new ReadSymbol(MULT, "*");
+            symbol = new Mult;
             break;
         case '(':
-            symbol = new ReadSymbol(OPEN, "(");
+            symbol = new Open;
             break;
         case ')':
-            symbol = new ReadSymbol(CLOSE, ")");
+            symbol = new Close;
             break;
         default:
             // That's a digit
@@ -56,17 +62,15 @@ Symbole Lexer::readSymbol(bool moveHead) {
                 increment++;
             }
             increment--;
-            symbol = new ReadSymbol(VAL, number);
+            symbol = new Number(atoi(number.c_str()));
             break;
     }
 
-    ReadSymbol sym(*symbol);
-    delete symbol;
-    this->stack.push(sym);
+    this->stack.push(symbol);
     if(moveHead) {
         this->cursor += increment;
     }
-    return sym;
+    return symbol;
 }
 
 Lexer::Lexer(string& s): stack(), toRead(s), cursor(0) {
@@ -74,5 +78,8 @@ Lexer::Lexer(string& s): stack(), toRead(s), cursor(0) {
 }
 
 Lexer::~Lexer() {
-    // Nothing to do for the moment
+    while(!stack.empty()) {
+        delete stack.top();
+        stack.pop();
+    }
 }
