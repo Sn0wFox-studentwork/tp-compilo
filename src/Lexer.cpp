@@ -36,7 +36,10 @@ Symbol* Lexer::readSymbol(bool moveHead) {
         case '\t':
         case ' ':
             cursor++;
+            cout << "SPACE" << endl;
             symbol = readSymbol(moveHead);
+            cout << "SYMBOL ADDRESS: " << symbol << endl;
+            cout << "SYMBOL VALUE: " << *symbol << endl;
             cursor--;
             break;
         case '+':
