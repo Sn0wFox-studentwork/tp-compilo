@@ -3,7 +3,12 @@ To learn the basics of how to create a compiler.
 
 https://github.com/Sn0wFox-studentwork/tp-compilo
 
-## Build and run
+## Prerequisites
+* g++
+* c++11
+* make
+
+## Build & run
 ### Windows
 
 ```shell
@@ -20,6 +25,17 @@ make OS=unix
 
 ### Others
 Other OS are not supported.
+
+## Make file targets & default
+* **all** (default): create build directories and build the project
+* **makedir**: creates
+* **clean**: remove all .o files
+* **mrproper**: remove build directory and all content
+* **print-%**: print the value of a makefile variable. Example usage: `make print-CC` => `g++`.
+
+Default OS: **WINDOWS**. To use any target with *nix, use `OS=unix`.
+
+Default mode: **debug**. To compile in release mode: `make DEBUG=no`.
 
 ## About IDEs
 ### CLion
