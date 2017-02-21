@@ -52,9 +52,3 @@ but you can easily set it up to make it work.
 No, make **doesn't** only work with Unix bash.
 You can perfectly use it in your Windows console, without anything like cygwin.
 Take a look at [this link](http://gnuwin32.sourceforge.net/packages/make.htm).
-
-## About compilers for this compiler
-Of course, this project will use Regex,
-which are a little buggy with some versions of **gcc** and **g++**.
-
-At first sight, **Visual C(++)** and **Clang** are fine.
