@@ -66,7 +66,7 @@ ifeq ($(OS),$(OSWIN))
 	OUTDIR += build\states build\symbols
 else ifeq ($(OS),$(OSUNIX))
 	DEL += rm
-	DELDIR += rmdir
+	DELDIR += rm
 	DELOPT += -rf
 	DELDIROPT += -rf
 	OUTDIR += build/states build/symbols
