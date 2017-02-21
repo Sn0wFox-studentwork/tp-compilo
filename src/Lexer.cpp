@@ -26,6 +26,7 @@ Symbol* Lexer::readSymbol(bool moveHead) {
     char c = this->toRead.at(this->cursor);
     int increment = 1;
     Symbol* symbol;
+    bool spaced = false;
 
     // Analyse string
     switch (c) {
@@ -36,11 +37,9 @@ Symbol* Lexer::readSymbol(bool moveHead) {
         case '\t':
         case ' ':
             cursor++;
-            cout << "SPACE" << endl;
             symbol = readSymbol(moveHead);
-            cout << "SYMBOL ADDRESS: " << symbol << endl;
-            cout << "SYMBOL VALUE: " << *symbol << endl;
             cursor--;
+            spaced = true;
             break;
         case '+':
             symbol = new Plus;
@@ -69,7 +68,9 @@ Symbol* Lexer::readSymbol(bool moveHead) {
             break;
     }
 
-    this->stack.push(symbol);
+    if(!spaced) {
+        this->stack.push(symbol);
+    }
     if(moveHead) {
         this->cursor += increment;
     }
